@@ -1,6 +1,6 @@
 # Rails administration dashboard example
 
-A roll-your-own alternative to admin gems for Rails applications, using RSpec request specs for some basic BDD goodness. See http://everydayrails.com/2012/07/30/rails-admin-panel-from-scratch.html for details or to post questions/comments.
+A roll-your-own alternative to admin gems for Rails applications, using RSpec request specs for some basic BDD goodness. See http://everydayrails.com/2012/07/31/rails-admin-panel-from-scratch.html for details or to post questions/comments.
 
 This source and the accompanying series of tutorials are currently a work in progress.
 
