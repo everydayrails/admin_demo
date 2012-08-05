@@ -1,5 +1,5 @@
 AdminDemo::Application.routes.draw do
-  resources :articles
+  resources :articles, only: [:index]
 
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
@@ -9,8 +9,8 @@ AdminDemo::Application.routes.draw do
   resources :sessions
   
   namespace :admin do
-    #get 'dashboard', to: 'dashboard#index'
     get '', to: 'dashboard#index', as: '/'
+    resources :articles
   end
   
   root to: 'articles#index'
