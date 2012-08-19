@@ -11,6 +11,7 @@ AdminDemo::Application.routes.draw do
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
     resources :articles
+    resources :users
   end
   
   root to: 'articles#index'

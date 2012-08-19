@@ -99,4 +99,28 @@ describe 'site administration' do
       page.should_not have_content '2 Ruby frameworks'
     end
   end  
+  
+  describe 'user management' do
+    before :each do
+      user = FactoryGirl.create(:user)
+      sign_in user
+    end
+    
+    it "adds a user" do
+      click_link 'Manage Users'
+      current_path.should eq admin_users_path
+      
+      expect{
+        click_link 'New User'
+        fill_in 'Email', with: 'aaron@everydayrails.com'
+        fill_in 'Password', with: 'secret'
+        fill_in 'Password confirmation', with: 'secret'
+        click_button 'Create User'
+      }.to change(User, :count).by(1)
+      
+      current_path.should eq admin_users_path
+      page.should have_content 'aaron@everydayrails.com'
+    end
+  end
+  
 end
